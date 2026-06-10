@@ -1,256 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oyera Auto Service Bay - Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f2f2f2;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyera Auto Service Bay - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
 
-    header {
-      background-color: #1a3c5e;
-      color: white;
-      padding: 20px;
-    }
+        header {
+            background-color: #1a3c5e;
+            color: white;
+            padding: 20px;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
 
-    header p {
-      margin: 5px 0 0;
-      font-size: 14px;
-      color: #cfd8e0;
-    }
+        header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #cfd8e0;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
 
-    /* summary cards */
-    .cards {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 25px;
-    }
+        /* summary cards */
+        .cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
 
-    .card {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      flex: 1;
-      min-width: 180px;
-      text-align: center;
-    }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+        }
 
-    .card h2 {
-      margin: 0;
-      font-size: 28px;
-      color: #1a3c5e;
-    }
+        .card h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #1a3c5e;
+        }
 
-    .card p {
-      margin: 5px 0 0;
-      font-size: 13px;
-      color: #666;
-    }
+        .card p {
+            margin: 5px 0 0;
+            font-size: 13px;
+            color: #666;
+        }
 
-    /* sections */
-    section {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 25px;
-    }
+        /* sections */
+        section {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
 
-    section h3 {
-      margin-top: 0;
-      border-bottom: 2px solid #1a3c5e;
-      padding-bottom: 8px;
-    }
+        section h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #1a3c5e;
+            padding-bottom: 8px;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
 
-    th {
-      background-color: #1a3c5e;
-      color: white;
-    }
+        th {
+            background-color: #1a3c5e;
+            color: white;
+        }
 
-    tr:hover {
-      background-color: #f9f9f9;
-    }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
 
-    .status {
-      padding: 3px 10px;
-      border-radius: 10px;
-      font-size: 12px;
-      color: white;
-    }
+        .status {
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: white;
+        }
 
-    .in-bay {
-      background-color: #e67e22;
-    }
+        .in-bay {
+            background-color: #e67e22;
+        }
 
-    .done {
-      background-color: #27ae60;
-    }
+        .done {
+            background-color: #27ae60;
+        }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 12px;
-      color: #888;
-    }
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #888;
+        }
 
-    @media (max-width: 600px) {
-      .cards {
-        flex-direction: column;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Oyera Auto Service Bay</h1>
-    <p>Daily Service Dashboard</p>
-  </header>
+    <header>
+        <h1>Oyera Auto Service Bay</h1>
+        <p>Daily Service Dashboard</p>
+    </header>
 
-  <div class="container">
+    <div class="container">
 
-    <!-- Summary cards -->
-    <div class="cards">
-      <div class="card">
-        <h2>3</h2>
-        <p>Cars in Bay</p>
-      </div>
-      <div class="card">
-        <h2>8</h2>
-        <p>Cars Serviced Today</p>
-      </div>
-      <div class="card">
-        <h2>1,450,000</h2>
-        <p>Revenue Today (UGX)</p>
-      </div>
+        <!-- Summary cards -->
+        <div class="cards">
+            <div class="card">
+                <h2>3</h2>
+                <p>Cars in Bay</p>
+            </div>
+            <div class="card">
+                <h2>8</h2>
+                <p>Cars Serviced Today</p>
+            </div>
+            <div class="card">
+                <h2>1,450,000</h2>
+                <p>Revenue Today (UGX)</p>
+            </div>
+        </div>
+
+        <!-- Service queue -->
+        <section>
+            <h3>Today's Service Queue</h3>
+            <table>
+                <tr>
+                    <th>Number Plate</th>
+                    <th>Service</th>
+                    <th>Technician</th>
+                    <th>Charge (UGX)</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>UBL 442J</td>
+                    <td>Engine oil + oil filter</td>
+                    <td>A. Okello</td>
+                    <td>135,000</td>
+                    <td><span class="status in-bay">In Bay</span></td>
+                </tr>
+                <tr>
+                    <td>UAX 109K</td>
+                    <td>Wheel alignment + balance</td>
+                    <td>J. Nakato</td>
+                    <td>50,000</td>
+                    <td><span class="status in-bay">In Bay</span></td>
+                </tr>
+                <tr>
+                    <td>UBG 771D</td>
+                    <td>Brake pads + brake fluid</td>
+                    <td>A. Okello</td>
+                    <td>95,000</td>
+                    <td><span class="status in-bay">In Bay</span></td>
+                </tr>
+                <tr>
+                    <td>UBF 884L</td>
+                    <td>Engine oil + oil filter</td>
+                    <td>J. Nakato</td>
+                    <td>120,000</td>
+                    <td><span class="status done">Serviced</span></td>
+                </tr>
+                <tr>
+                    <td>UAJ 552B</td>
+                    <td>Wheel alignment</td>
+                    <td>S. Mugisha</td>
+                    <td>50,000</td>
+                    <td><span class="status done">Serviced</span></td>
+                </tr>
+                <tr>
+                    <td>UBN 218G</td>
+                    <td>Gearbox oil + greasing</td>
+                    <td>S. Mugisha</td>
+                    <td>110,000</td>
+                    <td><span class="status done">Serviced</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Price list -->
+        <section>
+            <h3>Service Charges</h3>
+            <table>
+                <tr>
+                    <th>Service / Item</th>
+                    <th>Price (UGX)</th>
+                </tr>
+                <tr>
+                    <td>Labour (per job)</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td>Engine oil</td>
+                    <td>79,000 - 200,000</td>
+                </tr>
+                <tr>
+                    <td>Brake fluid</td>
+                    <td>13,000 - 20,000</td>
+                </tr>
+                <tr>
+                    <td>Oil filter</td>
+                    <td>15,000 - 20,000</td>
+                </tr>
+                <tr>
+                    <td>Wheel alignment</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td>Wheel balance</td>
+                    <td>20,000</td>
+                </tr>
+            </table>
+        </section>
+
     </div>
 
-    <!-- Service queue -->
-    <section>
-      <h3>Today's Service Queue</h3>
-      <table>
-        <tr>
-          <th>Number Plate</th>
-          <th>Service</th>
-          <th>Technician</th>
-          <th>Charge (UGX)</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>UBL 442J</td>
-          <td>Engine oil + oil filter</td>
-          <td>A. Okello</td>
-          <td>135,000</td>
-          <td><span class="status in-bay">In Bay</span></td>
-        </tr>
-        <tr>
-          <td>UAX 109K</td>
-          <td>Wheel alignment + balance</td>
-          <td>J. Nakato</td>
-          <td>50,000</td>
-          <td><span class="status in-bay">In Bay</span></td>
-        </tr>
-        <tr>
-          <td>UBG 771D</td>
-          <td>Brake pads + brake fluid</td>
-          <td>A. Okello</td>
-          <td>95,000</td>
-          <td><span class="status in-bay">In Bay</span></td>
-        </tr>
-        <tr>
-          <td>UBF 884L</td>
-          <td>Engine oil + oil filter</td>
-          <td>J. Nakato</td>
-          <td>120,000</td>
-          <td><span class="status done">Serviced</span></td>
-        </tr>
-        <tr>
-          <td>UAJ 552B</td>
-          <td>Wheel alignment</td>
-          <td>S. Mugisha</td>
-          <td>50,000</td>
-          <td><span class="status done">Serviced</span></td>
-        </tr>
-        <tr>
-          <td>UBN 218G</td>
-          <td>Gearbox oil + greasing</td>
-          <td>S. Mugisha</td>
-          <td>110,000</td>
-          <td><span class="status done">Serviced</span></td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- Price list -->
-    <section>
-      <h3>Service Charges</h3>
-      <table>
-        <tr>
-          <th>Service / Item</th>
-          <th>Price (UGX)</th>
-        </tr>
-        <tr>
-          <td>Labour (per job)</td>
-          <td>20,000</td>
-        </tr>
-        <tr>
-          <td>Engine oil</td>
-          <td>79,000 - 200,000</td>
-        </tr>
-        <tr>
-          <td>Brake fluid</td>
-          <td>13,000 - 20,000</td>
-        </tr>
-        <tr>
-          <td>Oil filter</td>
-          <td>15,000 - 20,000</td>
-        </tr>
-        <tr>
-          <td>Wheel alignment</td>
-          <td>30,000</td>
-        </tr>
-        <tr>
-          <td>Wheel balance</td>
-          <td>20,000</td>
-        </tr>
-      </table>
-    </section>
-
-  </div>
-
-  <footer>
-    Oyera Auto Service Bay Ltd | 123 Main Street, Kampala | +256 700 000000 |
-  </footer>
+    <footer>
+        Oyera Auto Service Bay Ltd
+    </footer>
 
 </body>
+
 </html>
