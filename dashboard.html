@@ -5,133 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oyera Auto Service Bay - Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f2f2f2;
-            color: #333;
-        }
 
-        header {
-            background-color: #1a3c5e;
-            color: white;
-            padding: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        header p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            color: #cfd8e0;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
-
-        /* summary cards */
-        .cards {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
-        .card {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            flex: 1;
-            min-width: 180px;
-            text-align: center;
-        }
-
-        .card h2 {
-            margin: 0;
-            font-size: 28px;
-            color: #1a3c5e;
-        }
-
-        .card p {
-            margin: 5px 0 0;
-            font-size: 13px;
-            color: #666;
-        }
-
-        /* sections */
-        section {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 25px;
-        }
-
-        section h3 {
-            margin-top: 0;
-            border-bottom: 2px solid #1a3c5e;
-            padding-bottom: 8px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
-        }
-
-        th {
-            background-color: #1a3c5e;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .status {
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-size: 12px;
-            color: white;
-        }
-
-        .in-bay {
-            background-color: #e67e22;
-        }
-
-        .done {
-            background-color: #27ae60;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 12px;
-            color: #888;
-        }
-
-        @media (max-width: 600px) {
-            .cards {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
+<style>
+    *,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-color: bisque;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-container {
+        background-color: aquamarine;
+        margin: 10px;
+        padding: 12px;
+        border-radius: 16px;
+        display: flex;
+        -ms-flex-direction: column
+    }
+
+    #quick-access-section {
+        background-color: blue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: fit-content;
+        align-items: center;
+    }
+
+    #cards-section {
+        background-color: aliceblue;
+        display: flex;
+        justify-content:space-between;
+
+    }
+
+    #cards-section section {
+        background-color: aqua;
+        justify-content:space-between;
+
+
+    }
+    
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 
 <body>
 
@@ -143,18 +78,35 @@
     <div class="container">
 
         <!-- Summary cards -->
-        <div class="cards">
-            <div class="card">
-                <h2>3</h2>
-                <p>Cars in Bay</p>
-            </div>
-            <div class="card">
-                <h2>8</h2>
-                <p>Cars Serviced Today</p>
-            </div>
-            <div class="card">
-                <h2>1,450,000</h2>
-                <p>Revenue Today (UGX)</p>
+        <div class="card-container">
+            <div id="quick-access-section">
+                <h1>Quick Access</h1>
+                <p>
+                </p>
+            </div><br>
+            <div id="cards-section">
+                <div class="card1">
+                    <h2>3</h2>
+                    Cars in Bay<p>
+
+                    </p>
+                </div>
+                <div class="card2">
+                    <h2>8</h2>
+                    <p>Cars Serviced Today </p>
+                </div>
+                <div class="card3">
+                    <h2>1,450,000</h2>
+                    <p>Revenue Today (UGX)</p>
+                </div>
+                <div class="card4">
+                    <h2>10</h2>
+                    <p>Available Technicians</p>
+                </div>
+                <div class="card5">
+                    <h2>10 Spare Parts</h2>
+                    <p>Inventory</p>
+                </div>
             </div>
         </div>
 
