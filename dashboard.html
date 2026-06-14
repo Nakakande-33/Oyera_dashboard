@@ -23,13 +23,16 @@
         flex-direction: column;
     }
 
-    .card-container {
-        background-color: aquamarine;
+    .card-container,
+    .table-section,
+    .price-table {
+        background-color: white;
         margin: 10px;
         padding: 12px;
         border-radius: 16px;
         display: flex;
-        -ms-flex-direction: column
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     #quick-access-section {
@@ -38,33 +41,56 @@
         flex-direction: row;
         justify-content: space-between;
         height: fit-content;
+        width: fit-content;
         align-items: center;
+        border: width 0.5px;
     }
 
     #cards-section {
         background-color: aliceblue;
         display: flex;
-        justify-content:space-between;
-
+        justify-content: space-between;
+        margin-bottom: 10px;
     }
 
-    #cards-section section {
+    .card {
+
         background-color: aqua;
-        justify-content:space-between;
+        justify-content: space-between;
+        padding: 10px;
+        border: width 0.5px;
+        border-style: solid;
+        border-color: white;
+        border-radius: 8px;
+
+    }
+
+    .card-title {
+        margin-bottom: 4px;
+        font-weight: bold;
+        border: width 0.5px;
 
 
     }
-    
 
     td,
     th {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
+
     }
 
     tr:nth-child(even) {
         background-color: #dddddd;
+    }
+    #table-btn{
+        display: flex;
+        justify-content:end;
+        height: fit-content;
+        margin-bottom:10px;
+        
+
     }
 </style>
 
@@ -80,132 +106,138 @@
         <!-- Summary cards -->
         <div class="card-container">
             <div id="quick-access-section">
-                <h1>Quick Access</h1>
-                <p>
+                <h2>Quick Access</h2>
+                <p><br>
                 </p>
             </div><br>
             <div id="cards-section">
-                <div class="card1">
+                <div class="card">
                     <h2>3</h2>
-                    Cars in Bay<p>
+                    <p class="card-title">Number of Cars in Bay</p>
 
-                    </p>
                 </div>
-                <div class="card2">
+                <div class="card">
                     <h2>8</h2>
-                    <p>Cars Serviced Today </p>
+                    <p class="card-title">Cars Serviced Today</p>
                 </div>
-                <div class="card3">
+                <div class="card">
                     <h2>1,450,000</h2>
-                    <p>Revenue Today (UGX)</p>
+                    <p class="card-title">Revenue Today</p>
                 </div>
-                <div class="card4">
+                <div class="card">
                     <h2>10</h2>
-                    <p>Available Technicians</p>
+                    <p class="card-title">Available Technicians</p>
                 </div>
-                <div class="card5">
-                    <h2>10 Spare Parts</h2>
-                    <p>Inventory</p>
+                <div class="card">
+                    <h2>10</h2>
+                    <p class="card-title">Spare Parts</p>
                 </div>
             </div>
         </div>
 
         <!-- Service queue -->
         <section>
-            <h3>Today's Service Queue</h3>
-            <table>
-                <tr>
-                    <th>Number Plate</th>
-                    <th>Service</th>
-                    <th>Technician</th>
-                    <th>Charge (UGX)</th>
-                    <th>Status</th>
-                </tr>
-                <tr>
-                    <td>UBL 442J</td>
-                    <td>Engine oil + oil filter</td>
-                    <td>A. Okello</td>
-                    <td>135,000</td>
-                    <td><span class="status in-bay">In Bay</span></td>
-                </tr>
-                <tr>
-                    <td>UAX 109K</td>
-                    <td>Wheel alignment + balance</td>
-                    <td>J. Nakato</td>
-                    <td>50,000</td>
-                    <td><span class="status in-bay">In Bay</span></td>
-                </tr>
-                <tr>
-                    <td>UBG 771D</td>
-                    <td>Brake pads + brake fluid</td>
-                    <td>A. Okello</td>
-                    <td>95,000</td>
-                    <td><span class="status in-bay">In Bay</span></td>
-                </tr>
-                <tr>
-                    <td>UBF 884L</td>
-                    <td>Engine oil + oil filter</td>
-                    <td>J. Nakato</td>
-                    <td>120,000</td>
-                    <td><span class="status done">Serviced</span></td>
-                </tr>
-                <tr>
-                    <td>UAJ 552B</td>
-                    <td>Wheel alignment</td>
-                    <td>S. Mugisha</td>
-                    <td>50,000</td>
-                    <td><span class="status done">Serviced</span></td>
-                </tr>
-                <tr>
-                    <td>UBN 218G</td>
-                    <td>Gearbox oil + greasing</td>
-                    <td>S. Mugisha</td>
-                    <td>110,000</td>
-                    <td><span class="status done">Serviced</span></td>
-                </tr>
-            </table>
+            <section class="table-section">
+                <div id="table-btn">
+                <button type="button">Add New Customer</button>
+                </div>
+                <h3>Today's Service Queue</h3>
+                <table>
+                    <tr>
+                        <th>Number Plate</th>
+                        <th>Service</th>
+                        <th>Technician</th>
+                        <th>Charge (UGX)</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>UBL 442J</td>
+                        <td>Engine oil + oil filter</td>
+                        <td>A. Okello</td>
+                        <td>135,000</td>
+                        <td><span class="status in-bay">In Bay</span></td>
+                    </tr>
+                    <tr>
+                        <td>UAX 109K</td>
+                        <td>Wheel alignment + balance</td>
+                        <td>J. Nakato</td>
+                        <td>50,000</td>
+                        <td><span class="status in-bay">In Bay</span></td>
+                    </tr>
+                    <tr>
+                        <td>UBG 771D</td>
+                        <td>Brake pads + brake fluid</td>
+                        <td>A. Okello</td>
+                        <td>95,000</td>
+                        <td><span class="status in-bay">In Bay</span></td>
+                    </tr>
+                    <tr>
+                        <td>UBF 884L</td>
+                        <td>Engine oil + oil filter</td>
+                        <td>J. Nakato</td>
+                        <td>120,000</td>
+                        <td><span class="status done">Serviced</span></td>
+                    </tr>
+                    <tr>
+                        <td>UAJ 552B</td>
+                        <td>Wheel alignment</td>
+                        <td>S. Mugisha</td>
+                        <td>50,000</td>
+                        <td><span class="status done">Serviced</span></td>
+                    </tr>
+                    <tr>
+                        <td>UBN 218G</td>
+                        <td>Gearbox oil + greasing</td>
+                        <td>S. Mugisha</td>
+                        <td>110,000</td>
+                        <td><span class="status done">Serviced</span></td>
+                    </tr>
+                </table>
+            </section>
         </section>
 
         <!-- Price list -->
         <section>
-            <h3>Service Charges</h3>
-            <table>
-                <tr>
-                    <th>Service / Item</th>
-                    <th>Price (UGX)</th>
-                </tr>
-                <tr>
-                    <td>Labour (per job)</td>
-                    <td>20,000</td>
-                </tr>
-                <tr>
-                    <td>Engine oil</td>
-                    <td>79,000 - 200,000</td>
-                </tr>
-                <tr>
-                    <td>Brake fluid</td>
-                    <td>13,000 - 20,000</td>
-                </tr>
-                <tr>
-                    <td>Oil filter</td>
-                    <td>15,000 - 20,000</td>
-                </tr>
-                <tr>
-                    <td>Wheel alignment</td>
-                    <td>30,000</td>
-                </tr>
-                <tr>
-                    <td>Wheel balance</td>
-                    <td>20,000</td>
-                </tr>
-            </table>
+            <section class="price-table">
+                <h3>Service Charges</h3><br><p>
+                    <br>
+                </p>
+                <table>
+                    <tr>
+                        <th>Service / Item</th>
+                        <th>Price (UGX)</th>
+                    </tr>
+                    <tr>
+                        <td>Labour (per job)</td>
+                        <td>20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Engine oil</td>
+                        <td>79,000 - 200,000</td>
+                    </tr>
+                    <tr>
+                        <td>Brake fluid</td>
+                        <td>13,000 - 20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Oil filter</td>
+                        <td>15,000 - 20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Wheel alignment</td>
+                        <td>30,000</td>
+                    </tr>
+                    <tr>
+                        <td>Wheel balance</td>
+                        <td>20,000</td>
+                    </tr>
+                </table>
+            </section>
         </section>
 
     </div>
 
-    <footer>
-        Oyera Auto Service Bay Ltd
-    </footer>
+   
 
 </body>
 
